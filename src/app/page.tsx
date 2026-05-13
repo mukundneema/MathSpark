@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white font-sans">
       {/* Navigation */}
       <header className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
         <div className="flex items-center gap-2">
@@ -77,21 +78,24 @@ export default function Home() {
               <p className="text-lg text-brand-dark-slate leading-relaxed mb-6">
                 With over 10 years of experience in mathematics education, our lead tutor is dedicated to making complex concepts simple and accessible for every student.
               </p>
+              <p className="text-lg text-brand-dark-slate leading-relaxed mb-8 font-medium italic border-l-4 border-brand-orange pl-4">
+                "My passion lies in helping kids and middle schoolers discover their 'inner mathematician' through fun, engaging, and supportive learning sessions."
+              </p>
               <p className="text-lg text-brand-dark-slate leading-relaxed mb-8">
-                Math Spark was founded on the belief that everyone can excel at math with the right guidance and spark of inspiration.
+                Math Spark was founded on the belief that everyone can excel at math with the right guidance and spark of inspiration. We focus on building confidence as much as competence.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-brand-orange flex items-center justify-center text-white text-xs font-bold">✓</div>
-                  <span className="font-medium">Personalized 1-on-1 Sessions</span>
+                  <span className="font-medium text-brand-deep-navy">Personalized 1-on-1 Sessions</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-brand-orange flex items-center justify-center text-white text-xs font-bold">✓</div>
-                  <span className="font-medium">Exam Preparation Experts</span>
+                  <span className="font-medium text-brand-deep-navy">Exam Preparation Experts</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-brand-orange flex items-center justify-center text-white text-xs font-bold">✓</div>
-                  <span className="font-medium">Confidence-Building Methods</span>
+                  <span className="font-medium text-brand-deep-navy">Confidence-Building Methods</span>
                 </div>
               </div>
             </div>
@@ -115,9 +119,9 @@ export default function Home() {
             <p className="mt-2 text-white/60">Igniting a passion for learning.</p>
           </div>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-brand-orange">Terms</a>
-            <a href="#" className="hover:text-brand-orange">Privacy</a>
-            <a href="#" className="hover:text-brand-orange">Cookies</a>
+            <a href="#" className="hover:text-brand-orange transition-colors">Terms</a>
+            <a href="#" className="hover:text-brand-orange transition-colors">Privacy</a>
+            <a href="#" className="hover:text-brand-orange transition-colors">Cookies</a>
           </div>
           <div className="text-white/60">
             © 2026 Math Spark. All rights reserved.

@@ -3,19 +3,26 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const courses = [
   {
     id: 'algebra-1',
     title: 'Algebra 1',
     description: 'Introduction to algebraic concepts and techniques',
-    icon: '√x',
+    icon: '/assets/fraction-heroes-icon.png',
   },
   {
     id: 'geometry',
     title: 'Geometry',
     description: 'Study of shapes, sizes, and the properties of space',
-    icon: '⊿',
+    icon: '/assets/geometry-explorers-icon.png',
+  },
+  {
+    id: 'pre-algebra',
+    title: 'Pre-Algebra',
+    description: 'Fundamental math concepts for middle schoolers',
+    icon: '/assets/pre-algebra-icon.png',
   },
   {
     id: 'calculus',
@@ -35,17 +42,11 @@ const courses = [
     description: 'Collection, analysis, interpretation, and presentation of data',
     icon: '📊',
   },
-  {
-    id: 'pre-algebra',
-    title: 'Pre-Algebra',
-    description: 'Fundamental math concepts for middle schoolers',
-    icon: '123',
-  },
 ];
 
 export default function CourseCatalog() {
   return (
-    <div className="min-h-screen bg-brand-classic-cream flex flex-col">
+    <div className="min-h-screen bg-brand-classic-cream flex flex-col font-sans">
       <Header />
 
       <main className="flex-1 max-w-7xl mx-auto px-8 py-12 w-full">
@@ -55,10 +56,14 @@ export default function CourseCatalog() {
           {courses.map((course) => (
             <div
               key={course.id}
-              className="bg-white rounded-3xl p-8 shadow-sm border border-brand-soft-blue/10 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+              className="bg-white rounded-3xl p-8 shadow-sm border border-brand-soft-blue/10 flex flex-col items-center text-center hover:shadow-md transition-shadow group"
             >
-              <div className="w-24 h-24 bg-brand-soft-blue/10 rounded-2xl flex items-center justify-center mb-6">
-                <span className="text-4xl font-bold text-brand-soft-blue">{course.icon}</span>
+              <div className="w-24 h-24 bg-brand-soft-blue/10 rounded-2xl flex items-center justify-center mb-6 overflow-hidden group-hover:scale-105 transition-transform">
+                {course.icon.startsWith('/') ? (
+                  <Image src={course.icon} alt={course.title} width={80} height={80} className="object-contain" />
+                ) : (
+                  <span className="text-4xl font-bold text-brand-soft-blue">{course.icon}</span>
+                )}
               </div>
               <h2 className="text-3xl font-bold text-brand-deep-navy mb-4">{course.title}</h2>
               <p className="text-brand-dark-slate/70 mb-8 text-lg">

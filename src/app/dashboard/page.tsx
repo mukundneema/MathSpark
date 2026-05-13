@@ -3,8 +3,6 @@
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import { 
-  LineChart, 
-  Line, 
   XAxis, 
   YAxis, 
   CartesianGrid, 
@@ -14,6 +12,7 @@ import {
   Area
 } from 'recharts';
 import { Bell, Search, Star, ChevronRight, Calendar, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 const sparkData = [
   { day: 'Mon', sparks: 10 },
@@ -26,9 +25,9 @@ const sparkData = [
 ];
 
 const lessons = [
-  { id: 1, title: 'Equivalent Fractions', date: 'Today', time: '4:00 PM', icon: '➗' },
-  { id: 2, title: 'Decimals', date: 'Tomorrow', time: '2:30 PM', icon: '🔢' },
-  { id: 3, title: 'Geometry', date: 'May 15', time: '5:00 PM', icon: '📐' },
+  { id: 1, title: 'Fraction Heroes', date: 'Today', time: '4:00 PM', icon: '/assets/fraction-heroes-icon.png' },
+  { id: 2, title: 'Geometry Explorers', date: 'Tomorrow', time: '2:30 PM', icon: '/assets/geometry-explorers-icon.png' },
+  { id: 3, title: 'Pre-Algebra', date: 'May 15', time: '5:00 PM', icon: '/assets/pre-algebra-icon.png' },
 ];
 
 const leaderboard = [
@@ -39,7 +38,7 @@ const leaderboard = [
 
 export default function Dashboard() {
   return (
-    <div className="flex bg-brand-classic-cream min-h-screen">
+    <div className="flex bg-brand-classic-cream min-h-screen font-sans">
       <Sidebar />
       
       <main className="flex-1 lg:ml-64 p-4 md:p-8">
@@ -66,7 +65,7 @@ export default function Dashboard() {
           </div>
         </header>
 
-        <h1 className="text-3xl font-bold text-brand-deep-navy mb-8">Student Dashboard</h1>
+        <h1 className="text-3xl font-bold text-brand-deep-navy mb-8 tracking-tight">Student Dashboard</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Progress & Chart */}
@@ -120,7 +119,10 @@ export default function Dashboard() {
             {/* Sparks Earned Chart */}
             <div className="bg-white p-6 rounded-2xl border border-brand-soft-blue/20 shadow-sm">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-bold text-brand-deep-navy">Sparks Earned</h2>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-xl font-bold text-brand-deep-navy">Sparks Earned</h2>
+                  <Image src="/assets/bronze-spark-badge.png" alt="Badge" width={24} height={24} />
+                </div>
                 <select className="bg-slate-50 border border-slate-200 text-sm rounded-lg px-2 py-1 focus:outline-none">
                   <option>Last 7 days</option>
                   <option>Last 30 days</option>
@@ -183,8 +185,12 @@ export default function Dashboard() {
               <div className="space-y-4">
                 {lessons.map((lesson) => (
                   <div key={lesson.id} className="flex items-center gap-4 p-3 hover:bg-brand-soft-blue/5 rounded-xl transition-colors cursor-pointer group">
-                    <div className="w-12 h-12 bg-brand-classic-cream rounded-lg flex items-center justify-center text-2xl">
-                      {lesson.icon}
+                    <div className="w-12 h-12 bg-brand-classic-cream rounded-lg flex items-center justify-center overflow-hidden">
+                      {lesson.icon.startsWith('/') ? (
+                         <Image src={lesson.icon} alt={lesson.title} width={32} height={32} className="object-contain" />
+                      ) : (
+                         <span className="text-2xl">{lesson.icon}</span>
+                      )}
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-brand-deep-navy group-hover:text-brand-soft-blue transition-colors">{lesson.title}</h4>

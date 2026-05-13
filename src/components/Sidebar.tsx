@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Home, BookOpen, Trophy, HelpCircle, LogOut, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -11,7 +12,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: 'Home', icon: Home, href: '/dashboard' },
-    { name: 'Lessons', icon: BookOpen, href: '/lessons' },
+    { name: 'Lessons', icon: BookOpen, href: '/courses' },
     { name: 'Leaderboard', icon: Trophy, href: '/leaderboard' },
     { name: 'Help', icon: HelpCircle, href: '/help' },
   ];
@@ -44,7 +45,14 @@ const Sidebar = () => {
         <div className="p-6">
           <div className="flex items-center gap-2 mb-10">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.png" alt="Math Spark" className="h-10 object-contain brightness-0 invert" />
+              <Image 
+                src="/logo-v3.png" 
+                alt="Math Spark" 
+                width={40} 
+                height={40} 
+                className="rounded-full bg-white p-1" 
+              />
+              <span className="text-xl font-bold tracking-tight">Math Spark</span>
             </Link>
           </div>
 
