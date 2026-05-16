@@ -13,6 +13,7 @@ import {
 } from 'recharts';
 import { Bell, Search, Star, ChevronRight, Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const sparkData = [
   { day: 'Mon', sparks: 10 },
@@ -178,9 +179,9 @@ export default function Dashboard() {
             <div className="bg-white p-6 rounded-2xl border border-brand-soft-blue/20 shadow-sm">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-bold text-brand-deep-navy">Upcoming Lessons</h2>
-                <button className="text-brand-soft-blue hover:text-brand-deep-navy transition-colors">
+                <Link href="/courses" className="text-brand-soft-blue hover:text-brand-deep-navy transition-colors">
                   <ChevronRight size={20} />
-                </button>
+                </Link>
               </div>
               <div className="space-y-4">
                 {lessons.map((lesson) => (
@@ -208,9 +209,12 @@ export default function Dashboard() {
                   </div>
                 ))}
               </div>
-              <button className="w-full mt-6 py-3 bg-brand-soft-blue/10 text-brand-soft-blue font-bold rounded-xl hover:bg-brand-soft-blue/20 transition-colors">
+              <Link 
+                href="/courses"
+                className="block w-full text-center mt-6 py-3 bg-brand-soft-blue/10 text-brand-soft-blue font-bold rounded-xl hover:bg-brand-soft-blue/20 transition-colors"
+              >
                 View Schedule
-              </button>
+              </Link>
             </div>
 
             {/* Leaderboard */}
@@ -240,9 +244,12 @@ export default function Dashboard() {
               <div className="relative z-10">
                 <h3 className="text-lg font-bold mb-2">Daily Challenge</h3>
                 <p className="text-white/80 text-sm mb-4">Complete today's math puzzle and earn bonus sparks!</p>
-                <button className="bg-white text-brand-soft-blue px-6 py-2 rounded-lg font-bold text-sm hover:bg-brand-classic-cream transition-colors">
+                <Link 
+                  href="/courses"
+                  className="inline-block bg-white text-brand-soft-blue px-6 py-2 rounded-lg font-bold text-sm hover:bg-brand-classic-cream transition-colors"
+                >
                   Play Now
-                </button>
+                </Link>
               </div>
               <div className="absolute right-[-20px] bottom-[-20px] opacity-20">
                 <Star size={100} fill="currentColor" />

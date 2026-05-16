@@ -79,10 +79,13 @@ const Sidebar = () => {
         </div>
 
         <div className="mt-auto p-6">
-          <button className="flex items-center gap-3 px-4 py-3 w-full rounded-lg hover:bg-white/10 text-brand-classic-cream/80 transition-colors">
+          <Link 
+            href="/"
+            className="flex items-center gap-3 px-4 py-3 w-full rounded-lg hover:bg-white/10 text-brand-classic-cream/80 transition-colors"
+          >
             <LogOut size={20} />
             <span>Logout</span>
-          </button>
+          </Link>
         </div>
       </aside>
     </>

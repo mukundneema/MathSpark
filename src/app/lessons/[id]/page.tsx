@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Header from '@/components/Header';
+import Link from 'next/link';
 import { Play, CheckCircle2, ChevronRight, Video, FileText, HelpCircle } from 'lucide-react';
 
 export default function LessonView({ params }: { params: { id: string } }) {
@@ -130,9 +131,12 @@ export default function LessonView({ params }: { params: { id: string } }) {
               <p className="text-brand-dark-slate text-sm mb-4">
                 Don't worry! Ask a tutor or watch the theory video again.
               </p>
-              <button className="text-brand-orange font-bold text-sm hover:underline">
+              <Link 
+                href="/contact"
+                className="text-brand-orange font-bold text-sm hover:underline"
+              >
                 Message Tutor
-              </button>
+              </Link>
             </div>
           </div>
         </div>

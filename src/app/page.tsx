@@ -18,14 +18,14 @@ export default function Home() {
         </div>
         
         <nav className="hidden md:flex items-center gap-8 text-brand-dark-slate font-medium">
-          <a href="#" className="hover:text-brand-soft-blue transition-colors">About</a>
+          <Link href="/about" className="hover:text-brand-soft-blue transition-colors">About</Link>
           <Link href="/courses" className="hover:text-brand-soft-blue transition-colors">Courses</Link>
-          <a href="#" className="hover:text-brand-soft-blue transition-colors">Tutors</a>
-          <a href="#" className="hover:text-brand-soft-blue transition-colors">Contact</a>
+          <Link href="/tutors" className="hover:text-brand-soft-blue transition-colors">Tutors</Link>
+          <Link href="/contact" className="hover:text-brand-soft-blue transition-colors">Contact</Link>
         </nav>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</a>
+          <Link href="/login" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</Link>
           <Link href="/dashboard" className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
             Start Learning
           </Link>
@@ -46,9 +46,9 @@ export default function Home() {
               <Link href="/courses" className="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition-colors">
                 Start Learning
               </Link>
-              <button className="bg-white text-brand-deep-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-classic-cream transition-colors">
+              <Link href="/tutors" className="bg-white text-brand-deep-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-classic-cream transition-colors">
                 Meet the Tutor
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -119,9 +119,9 @@ export default function Home() {
             <p className="mt-2 text-white/60">Igniting a passion for learning.</p>
           </div>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-brand-orange transition-colors">Terms</a>
-            <a href="#" className="hover:text-brand-orange transition-colors">Privacy</a>
-            <a href="#" className="hover:text-brand-orange transition-colors">Cookies</a>
+            <Link href="/terms" className="hover:text-brand-orange transition-colors">Terms</Link>
+            <Link href="/privacy" className="hover:text-brand-orange transition-colors">Privacy</Link>
+            <Link href="/privacy" className="hover:text-brand-orange transition-colors">Cookies</Link>
           </div>
           <div className="text-white/60">
             © 2026 Math Spark. All rights reserved.
