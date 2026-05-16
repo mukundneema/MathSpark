@@ -55,10 +55,13 @@ export default function Dashboard() {
           </div>
           
           <div className="flex items-center gap-6">
-            <button className="relative p-2 text-brand-dark-slate hover:bg-brand-soft-blue/10 rounded-full transition-colors">
+            <Link 
+              href="/help"
+              className="relative p-2 text-brand-dark-slate hover:bg-brand-soft-blue/10 rounded-full transition-colors"
+            >
               <Bell size={22} />
               <span className="absolute top-2 right-2 w-2 h-2 bg-brand-orange rounded-full border-2 border-brand-classic-cream"></span>
-            </button>
+            </Link>
             <div className="flex items-center gap-3 bg-white p-1 pr-4 rounded-full border border-brand-soft-blue/20">
               <div className="w-8 h-8 bg-brand-soft-blue rounded-full flex items-center justify-center text-brand-deep-navy font-bold">JD</div>
               <span className="text-sm font-semibold text-brand-dark-slate">John Doe</span>
