@@ -188,7 +188,11 @@ export default function Dashboard() {
               </div>
               <div className="space-y-4">
                 {lessons.map((lesson) => (
-                  <div key={lesson.id} className="flex items-center gap-4 p-3 hover:bg-brand-soft-blue/5 rounded-xl transition-colors cursor-pointer group">
+                  <Link 
+                    key={lesson.id} 
+                    href={`/lessons/${lesson.id}`}
+                    className="flex items-center gap-4 p-3 hover:bg-brand-soft-blue/5 rounded-xl transition-colors cursor-pointer group"
+                  >
                     <div className="w-12 h-12 bg-brand-classic-cream rounded-lg flex items-center justify-center overflow-hidden">
                       {lesson.icon.startsWith('/') ? (
                          <Image src={lesson.icon} alt={lesson.title} width={32} height={32} className="object-contain" />
@@ -209,7 +213,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
               <Link 

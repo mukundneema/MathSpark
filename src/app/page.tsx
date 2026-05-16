@@ -121,7 +121,7 @@ export default function Home() {
           <div className="flex gap-8">
             <Link href="/terms" className="hover:text-brand-orange transition-colors">Terms</Link>
             <Link href="/privacy" className="hover:text-brand-orange transition-colors">Privacy</Link>
-            <Link href="/privacy" className="hover:text-brand-orange transition-colors">Cookies</Link>
+            <Link href="/cookies" className="hover:text-brand-orange transition-colors">Cookies</Link>
           </div>
           <div className="text-white/60">
             © 2026 Math Spark. All rights reserved.
