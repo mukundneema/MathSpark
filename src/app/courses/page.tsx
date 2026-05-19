@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -80,9 +81,7 @@ export default function CourseCatalog() {
         </div>
       </main>
 
-      <footer className="py-8 text-center text-brand-dark-slate/40 text-sm">
-        © 2026 Math Spark. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }
