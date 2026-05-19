@@ -4,13 +4,13 @@ import React, { useState, use } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import { Play, CheckCircle2, ChevronRight, Video, FileText, HelpCircle, ArrowLeft } from 'lucide-react';
+import { Play, CheckCircle2, ChevronRight, Video, FileText, HelpCircle, ArrowLeft, XCircle } from 'lucide-react';
 import courseData from '@/data/courses.json';
 
 export default function LessonView({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
-  const [answer, setAnswer] = useState('');
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [answers, setAnswers] = useState<{[key: number]: string}>({});
+  const [results, setResults] = useState<{[key: number]: boolean | null}>({});
 
   const course = courseData.courses.find(c => c.id === id);
 
@@ -27,11 +27,19 @@ export default function LessonView({ params }: { params: Promise<{ id: string }>
     );
   }
 
-  const handleCheck = (correctAnswer: string) => {
-    if (answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-      setIsCorrect(true);
+  const handleCheck = (index: number, correctAnswer: string) => {
+    const userAnswer = answers[index] || '';
+    if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+      setResults(prev => ({ ...prev, [index]: true }));
     } else {
-      setIsCorrect(false);
+      setResults(prev => ({ ...prev, [index]: false }));
+    }
+  };
+
+  const handleInputChange = (index: number, value: string) => {
+    setAnswers(prev => ({ ...prev, [index]: value }));
+    if (results[index] !== null) {
+      setResults(prev => ({ ...prev, [index]: null }));
     }
   };
 
@@ -81,51 +89,71 @@ export default function LessonView({ params }: { params: Promise<{ id: string }>
                 </div>
 
                 {/* Lesson Content */}
-                <div className="bg-white rounded-3xl p-8 shadow-sm border border-brand-soft-blue/10">
-                  <h2 className="text-2xl font-bold text-brand-deep-navy mb-4">Lesson Content</h2>
-                  <p className="text-lg text-brand-dark-slate leading-relaxed">
-                    {firstLesson.content}
-                  </p>
+                <div className="bg-white rounded-3xl p-10 shadow-sm border border-brand-soft-blue/10">
+                  <h2 className="text-2xl font-bold text-brand-deep-navy mb-6">Lesson Content</h2>
+                  <div className="prose prose-lg max-w-none text-brand-dark-slate">
+                    {firstLesson.content.split('\n\n').map((para, i) => (
+                      <p key={i} className="mb-4 leading-relaxed whitespace-pre-line">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Problem Section */}
+                {/* Practice Section */}
                 {firstLesson.practice && firstLesson.practice.length > 0 && (
-                  <div className="bg-white rounded-3xl p-8 shadow-sm border border-brand-soft-blue/10">
-                    <h2 className="text-2xl font-bold text-brand-deep-navy mb-6">Practice Problem</h2>
-                    <div className="space-y-4 mb-8 text-xl text-brand-dark-slate">
-                      <p>{firstLesson.practice[0].question}</p>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-4 items-center">
-                      <input
-                        type="text"
-                        value={answer}
-                        onChange={(e) => setAnswer(e.target.value)}
-                        placeholder="Enter your answer"
-                        className="bg-brand-classic-cream/50 border-2 border-brand-soft-blue/20 rounded-2xl px-6 py-4 text-xl w-full sm:w-64 focus:outline-none focus:border-brand-soft-blue transition-colors"
-                      />
-                      <button
-                        onClick={() => handleCheck(firstLesson.practice[0].answer)}
-                        className="bg-brand-soft-blue text-brand-deep-navy font-bold px-8 py-4 rounded-2xl hover:bg-brand-soft-blue/80 transition-colors"
-                      >
-                        Check Answer
-                      </button>
-                      {isCorrect === true && (
-                        <div className="flex items-center gap-2 text-green-600 font-bold">
-                          <CheckCircle2 size={32} />
-                          <span>Correct!</span>
+                  <div className="space-y-8">
+                    <h2 className="text-3xl font-bold text-brand-deep-navy px-2">Practice Problems</h2>
+                    {firstLesson.practice.map((prob, idx) => (
+                      <div key={idx} className="bg-white rounded-3xl p-10 shadow-sm border border-brand-soft-blue/10">
+                        <div className="flex items-center gap-3 mb-6">
+                           <div className="w-10 h-10 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold">
+                              {idx + 1}
+                           </div>
+                           <h3 className="text-xl font-bold text-brand-deep-navy">Problem {idx + 1}</h3>
                         </div>
-                      )}
-                      {isCorrect === false && (
-                        <span className="text-red-500 font-bold">Try again!</span>
-                      )}
-                    </div>
-                    {isCorrect === true && firstLesson.practice[0].explanation && (
-                      <div className="mt-6 p-6 bg-green-50 rounded-2xl border border-green-100 text-green-800">
-                        <p className="font-bold mb-2">Explanation:</p>
-                        <p>{firstLesson.practice[0].explanation}</p>
+                        <div className="space-y-4 mb-8 text-xl text-brand-dark-slate">
+                          <p>{prob.question}</p>
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-4 items-center">
+                          <input
+                            type="text"
+                            value={answers[idx] || ''}
+                            onChange={(e) => handleInputChange(idx, e.target.value)}
+                            placeholder="Your answer"
+                            className="bg-brand-classic-cream/50 border-2 border-brand-soft-blue/20 rounded-2xl px-6 py-4 text-xl w-full sm:w-64 focus:outline-none focus:border-brand-orange transition-colors font-medium text-brand-deep-navy"
+                          />
+                          <button
+                            onClick={() => handleCheck(idx, prob.answer)}
+                            className="bg-brand-deep-navy text-white font-bold px-8 py-4 rounded-2xl hover:bg-brand-dark-slate transition-colors"
+                          >
+                            Check
+                          </button>
+                          {results[idx] === true && (
+                            <div className="flex items-center gap-2 text-green-600 font-bold animate-in zoom-in duration-300">
+                              <CheckCircle2 size={32} />
+                              <span>Correct!</span>
+                            </div>
+                          )}
+                          {results[idx] === false && (
+                            <div className="flex items-center gap-2 text-red-500 font-bold animate-in shake duration-300">
+                               <XCircle size={32} />
+                               <span>Try again!</span>
+                            </div>
+                          )}
+                        </div>
+                        {results[idx] === true && prob.explanation && (
+                          <div className="mt-8 p-8 bg-green-50 rounded-3xl border border-green-100 text-green-800 animate-in slide-in-from-top duration-500">
+                            <p className="font-bold text-lg mb-3 flex items-center gap-2">
+                               <FileText size={20} />
+                               Explanation
+                            </p>
+                            <p className="text-lg leading-relaxed">{prob.explanation}</p>
+                          </div>
+                        )}
                       </div>
-                    )}
+                    ))}
                   </div>
                 )}
               </>
@@ -182,7 +210,7 @@ export default function LessonView({ params }: { params: Promise<{ id: string }>
                 <HelpCircle size={20} />
                 Need Help?
               </h3>
-              <p className="text-brand-dark-slate text-sm mb-4">
+              <p className="text-brand-dark-slate text-sm mb-4 leading-relaxed">
                 Don't worry! Ask a tutor or watch the theory video again.
               </p>
               <Link 

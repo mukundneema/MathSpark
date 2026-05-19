@@ -8,17 +8,27 @@
       "modules": [
         {
           "id": "module-1",
-          "title": "Module 1: The Magic of Variables",
+          "title": "Module 1: The Foundations of Algebra",
           "lessons": [
             {
-              "id": "intro-to-variables",
-              "title": "Introduction to Variables",
-              "content": "Variables are the building blocks of algebra. Think of them as boxes where you can store values...",
+              "id": "the-magic-of-variables",
+              "title": "The Magic of Variables",
+              "content": "In math, we often deal with numbers we know, like 5, 10, or 100. But sometimes, we have a 'mystery number'—a value we don't know yet. Instead of leaving a blank space, we use a letter to represent that mystery. This letter is called a variable.\n\nThink of a variable like an empty gift box. You don't know what's inside yet, but you know something will be there! We usually use letters like x, y, or z, but you could use any symbol you like.\n\nWhy Use Variables?\nVariables allow us to write 'math sentences' (called equations) that describe relationships. For example, if you have some number of apples and your friend gives you 2 more, you now have x + 2 apples. If you eventually find out you started with 5 apples, then x becomes 5, and x + 2 becomes 7!",
               "practice": [
                 {
-                  "question": "If x = 5, what is x + 3?",
-                  "answer": "8",
-                  "explanation": "Replace x with 5, so 5 + 3 = 8."
+                  "question": "Sarah has a box of granola bars (b). She eats 3 of them. Write a math expression to show how many granola bars Sarah has left.",
+                  "answer": "b - 3",
+                  "explanation": "Since we don't know the starting number of bars, we use the variable b. 'Eating' them means we are subtracting, so b - 3 represents the remaining bars."
+                },
+                {
+                  "question": "A magician doubles the number of coins (c) in a hat. Write an expression for the new number of coins.",
+                  "answer": "2c",
+                  "explanation": "Doubling something means multiplying it by 2. In algebra, when we put a number next to a letter, it means multiplication! So 2c is the same as saying '2 times c'."
+                },
+                {
+                  "question": "Four friends decide to split the cost of a pizza (p) equally. Write an expression to show how much each friend pays.",
+                  "answer": "p / 4",
+                  "explanation": "Splitting something equally means division. We take the total cost p and divide it by the 4 friends."
                 }
               ]
             }
