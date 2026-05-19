@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Math Spark ⚡️
 
-## Getting Started
+Math Spark is a modern, kid-friendly mathematics tutoring platform designed to ignite a passion for learning in elementary and middle school students. Founded by Mukund Neema, a freshman at Ardrey Kell High School with four years of teaching experience, Math Spark combines rigorous academic standards with a relatable, student-to-student connection.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Interactive Learning:** Engaging lesson views with real-time feedback and detailed explanations.
+- **The 'Spark' Method:** A unique teaching philosophy focused on Intuitive Learning, Building Confidence, and creating 'Spark' Moments.
+- **Comprehensive Curriculum:** Courses ranging from Pre-Algebra Adventures to Algebra 1 and Geometry.
+- **Student Dashboard:** Personalized overview of upcoming lessons and progress.
+- **Expert Mentorship:** Curriculum influenced by world-class experts like Dr. Harold Reiter and Samarth Kassereni.
+- **Responsive Design:** A professional, accessible, and playful UI built with Tailwind CSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Deployment:** Optimized for [Vercel](https://vercel.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏃‍♂️ Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 18.x or later
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mukundneema/MathSpark.git
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📁 Project Structure
+
+- `src/app/`: Next.js App Router pages and layouts.
+- `src/components/`: Reusable UI components (Header, Footer, Sidebar, etc.).
+- `src/data/`: Static data storage (Course content, lesson structures).
+- `public/`: Static assets and images.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Built with ❤️ by the Math Spark Team.

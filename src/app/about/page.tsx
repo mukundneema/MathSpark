@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Award, Target, Users, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "About Math Spark | Our Story and Mission",
+  description: "Learn about Math Spark's mission to ignite mathematical curiosity. Founded by Mukund Neema, we bridge the gap between rigorous standards and student relatability.",
+};
 
 export default function AboutPage() {
   return (

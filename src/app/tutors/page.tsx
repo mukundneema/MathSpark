@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, Brain, ShieldCheck, Target, GraduationCap, ArrowRight, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Our Tutors | The Spark Method",
+  description: "Meet Mukund Neema and discover the Spark Method. Our 1-on-1 sessions are designed to build confidence, create intuitive understanding, and ignite a passion for math.",
+};
 
 export default function TutorsPage() {
   return (

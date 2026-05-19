@@ -1,11 +1,15 @@
-'use client';
-
+import type { Metadata } from "next";
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import courseData from '@/data/courses.json';
+
+export const metadata: Metadata = {
+  title: "Course Catalog | Math Spark Adventures",
+  description: "Explore our range of math courses including Pre-Algebra, Algebra 1, and Geometry. Designed to make mathematics intuitive and fun for students.",
+};
 
 export default function CourseCatalog() {
   const { courses } = courseData;
