@@ -1,0 +1,44 @@
+{
+  "courses": [
+    {
+      "id": "pre-algebra",
+      "title": "Pre-Algebra Adventures",
+      "description": "Fundamental math concepts for middle schoolers",
+      "icon": "/assets/pre-algebra-icon.png",
+      "modules": [
+        {
+          "id": "module-1",
+          "title": "Module 1: The Magic of Variables",
+          "lessons": [
+            {
+              "id": "intro-to-variables",
+              "title": "Introduction to Variables",
+              "content": "Variables are the building blocks of algebra. Think of them as boxes where you can store values...",
+              "practice": [
+                {
+                  "question": "If x = 5, what is x + 3?",
+                  "answer": "8",
+                  "explanation": "Replace x with 5, so 5 + 3 = 8."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "algebra-1",
+      "title": "Algebra 1",
+      "description": "Introduction to algebraic concepts and techniques",
+      "icon": "/assets/fraction-heroes-icon.png",
+      "modules": []
+    },
+    {
+      "id": "geometry",
+      "title": "Geometry Explorers",
+      "description": "Study of shapes, sizes, and the properties of space",
+      "icon": "/assets/geometry-explorers-icon.png",
+      "modules": []
+    }
+  ]
+}
