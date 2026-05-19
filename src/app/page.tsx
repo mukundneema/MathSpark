@@ -1,36 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans">
-      {/* Navigation */}
-      <header className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
-        <div className="flex items-center gap-2">
-          <Image
-            src="/logo-v3.png"
-            alt="Math Spark Logo"
-            width={60}
-            height={60}
-            className="object-contain"
-          />
-          <span className="text-2xl font-bold tracking-tight text-brand-deep-navy">Math Spark</span>
-        </div>
-        
-        <nav className="hidden md:flex items-center gap-8 text-brand-dark-slate font-medium">
-          <Link href="/about" className="hover:text-brand-soft-blue transition-colors">About</Link>
-          <Link href="/courses" className="hover:text-brand-soft-blue transition-colors">Courses</Link>
-          <Link href="/tutors" className="hover:text-brand-soft-blue transition-colors">Tutors</Link>
-          <Link href="/contact" className="hover:text-brand-soft-blue transition-colors">Contact</Link>
-        </nav>
-
-        <div className="flex items-center gap-6">
-          <Link href="/login" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</Link>
-          <Link href="/dashboard" className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
-            Start Learning
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="bg-brand-deep-navy relative overflow-hidden">
@@ -76,7 +52,7 @@ export default function Home() {
             <div className="md:w-1/2 order-2 md:order-1">
               <h2 className="text-4xl font-bold text-brand-deep-navy mb-6">Meet Your Lead Tutor</h2>
               <p className="text-lg text-brand-dark-slate leading-relaxed mb-6">
-                With over 10 years of experience in mathematics education, our lead tutor is dedicated to making complex concepts simple and accessible for every student.
+                With over 4 years of experience in mathematics education, our lead tutor, Mukund Neema, is dedicated to making complex concepts simple and accessible for every student.
               </p>
               <p className="text-lg text-brand-dark-slate leading-relaxed mb-8 font-medium italic border-l-4 border-brand-orange pl-4">
                 "My passion lies in helping kids and middle schoolers discover their 'inner mathematician' through fun, engaging, and supportive learning sessions."
@@ -103,7 +79,7 @@ export default function Home() {
                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-white overflow-hidden shadow-xl">
                   {/* Reuse mockup or placeholder */}
                   <div className="w-full h-full bg-brand-deep-navy flex items-center justify-center text-white text-2xl font-bold">
-                    Lead Tutor
+                    Mukund Neema
                   </div>
                </div>
             </div>
@@ -111,23 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-brand-deep-navy text-white py-12">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div>
-            <span className="text-2xl font-bold">MATH SPARK</span>
-            <p className="mt-2 text-white/60">Igniting a passion for learning.</p>
-          </div>
-          <div className="flex gap-8">
-            <Link href="/terms" className="hover:text-brand-orange transition-colors">Terms</Link>
-            <Link href="/privacy" className="hover:text-brand-orange transition-colors">Privacy</Link>
-            <Link href="/cookies" className="hover:text-brand-orange transition-colors">Cookies</Link>
-          </div>
-          <div className="text-white/60">
-            © 2026 Math Spark. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

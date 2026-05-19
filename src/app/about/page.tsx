@@ -1,37 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Award, Target, Users, BookOpen } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col bg-brand-classic-cream font-sans">
-      {/* Navigation */}
-      <header className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
-        <div className="flex items-center gap-2">
-          <Image
-            src="/logo-v3.png"
-            alt="Math Spark Logo"
-            width={60}
-            height={60}
-            className="object-contain"
-          />
-          <span className="text-2xl font-bold tracking-tight text-brand-deep-navy">Math Spark</span>
-        </div>
-        
-        <nav className="hidden md:flex items-center gap-8 text-brand-dark-slate font-medium">
-          <Link href="/about" className="text-brand-soft-blue font-bold">About</Link>
-          <Link href="/courses" className="hover:text-brand-soft-blue transition-colors">Courses</Link>
-          <Link href="/tutors" className="hover:text-brand-soft-blue transition-colors">Tutors</Link>
-          <Link href="/contact" className="hover:text-brand-soft-blue transition-colors">Contact</Link>
-        </nav>
-
-        <div className="flex items-center gap-6">
-          <Link href="/login" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</Link>
-          <Link href="/dashboard" className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
-            Start Learning
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1">
         {/* Hero / Introduction Section */}
@@ -169,23 +145,7 @@ export default function AboutPage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-brand-deep-navy text-white py-12">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div>
-            <span className="text-2xl font-bold">MATH SPARK</span>
-            <p className="mt-2 text-white/60">Igniting a passion for learning.</p>
-          </div>
-          <div className="flex gap-8 text-sm sm:text-base">
-            <Link href="/terms" className="hover:text-brand-orange transition-colors">Terms</Link>
-            <Link href="/privacy" className="hover:text-brand-orange transition-colors">Privacy</Link>
-            <Link href="/cookies" className="hover:text-brand-orange transition-colors">Cookies</Link>
-          </div>
-          <div className="text-white/60 text-sm">
-            © 2026 Math Spark. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -6,25 +6,33 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="bg-brand-deep-navy text-white px-8 py-4 flex items-center justify-between shadow-md">
-      <div className="flex items-center gap-4">
+    <header className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full bg-transparent">
+      <div className="flex items-center gap-2">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo-v3.png"
             alt="Math Spark Logo"
-            width={50}
-            height={50}
-            className="rounded-full"
+            width={60}
+            height={60}
+            className="object-contain"
           />
-          <span className="text-2xl font-bold tracking-tight hidden sm:inline">Math Spark</span>
+          <span className="text-2xl font-bold tracking-tight text-brand-deep-navy">Math Spark</span>
         </Link>
       </div>
-
-      <nav className="flex items-center gap-8 font-medium">
-        <Link href="/" className="hover:text-brand-soft-blue transition-colors">Home</Link>
+      
+      <nav className="hidden md:flex items-center gap-8 text-brand-dark-slate font-medium">
+        <Link href="/about" className="hover:text-brand-soft-blue transition-colors">About</Link>
         <Link href="/courses" className="hover:text-brand-soft-blue transition-colors">Courses</Link>
-        <Link href="/dashboard" className="hover:text-brand-soft-blue transition-colors">Profile</Link>
+        <Link href="/tutors" className="hover:text-brand-soft-blue transition-colors">Tutors</Link>
+        <Link href="/contact" className="hover:text-brand-soft-blue transition-colors">Contact</Link>
       </nav>
+
+      <div className="flex items-center gap-6">
+        <Link href="/login" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</Link>
+        <Link href="/dashboard" className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
+          Start Learning
+        </Link>
+      </div>
     </header>
   );
 };
