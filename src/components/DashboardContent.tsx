@@ -62,10 +62,15 @@ export default function DashboardContent() {
               <Bell size={22} />
               <span className="absolute top-2 right-2 w-2 h-2 bg-brand-orange rounded-full border-2 border-brand-classic-cream"></span>
             </Link>
-            <div className="flex items-center gap-3 bg-white p-1 pr-4 rounded-full border border-brand-soft-blue/20">
-              <div className="w-8 h-8 bg-brand-soft-blue rounded-full flex items-center justify-center text-brand-deep-navy font-bold">JD</div>
-              <span className="text-sm font-semibold text-brand-dark-slate">John Doe</span>
-            </div>
+            <Link 
+              href="/profile"
+              className="flex items-center gap-3 bg-white p-1 pr-4 rounded-full border border-brand-soft-blue/20 hover:bg-brand-soft-blue/5 transition-colors cursor-pointer"
+            >
+              <div className="w-8 h-8 bg-brand-soft-blue rounded-full flex items-center justify-center text-brand-deep-navy font-bold overflow-hidden">
+                <Image src="/assets/avatar-astronaut.png" alt="Profile" width={32} height={32} />
+              </div>
+              <span className="text-sm font-semibold text-brand-dark-slate">Emily Johnson</span>
+            </Link>
           </div>
         </header>
 

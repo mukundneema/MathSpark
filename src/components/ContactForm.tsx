@@ -38,7 +38,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="font-bold text-brand-deep-navy text-lg">General Inquiries</h3>
-                <p className="text-brand-dark-slate/70 font-medium">info@mathspark.edu</p>
+                <p className="text-brand-dark-slate/70 font-medium">mathspark2026@gmail.com</p>
                 <p className="text-brand-dark-slate/50 text-sm mt-1">(555) 123-4567</p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="font-bold text-brand-deep-navy text-lg">Session Booking</h3>
-                <p className="text-brand-dark-slate/70 font-medium">bookings@mathspark.edu</p>
+                <p className="text-brand-dark-slate/70 font-medium">mathspark2026@gmail.com</p>
                 <p className="text-brand-dark-slate/50 text-sm mt-1">Available for 1-on-1 and group workshops.</p>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="font-bold text-brand-deep-navy text-lg">Technical Support</h3>
-                <p className="text-brand-dark-slate/70 font-medium">support@mathspark.edu</p>
+                <p className="text-brand-dark-slate/70 font-medium">mathspark2026@gmail.com</p>
                 <p className="text-brand-dark-slate/50 text-sm mt-1">Live Chat: Mon - Fri, 9 AM - 5 PM EST</p>
               </div>
             </div>

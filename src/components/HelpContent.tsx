@@ -120,7 +120,7 @@ export default function HelpContent() {
                     <li>Check your internet connection.</li>
                     <li>Refresh your browser page.</li>
                     <li>Ensure your browser is up to date (we recommend Chrome or Firefox).</li>
-                    <li>If it still doesn't work, email us at <a href="mailto:support@mathspark.edu" className="text-brand-soft-blue font-bold hover:underline">support@mathspark.edu</a> with a screenshot of the error.</li>
+                    <li>If it still doesn't work, email us at <a href="mailto:mathspark2026@gmail.com" className="text-brand-soft-blue font-bold hover:underline">mathspark2026@gmail.com</a> with a screenshot of the error.</li>
                   </ol>
                 }
               />

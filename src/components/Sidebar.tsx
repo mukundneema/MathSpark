@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Home, BookOpen, Trophy, HelpCircle, LogOut, Menu, X } from 'lucide-react';
+import { Home, BookOpen, Trophy, HelpCircle, User, Settings, LogOut, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -14,6 +14,8 @@ const Sidebar = () => {
     { name: 'Home', icon: Home, href: '/dashboard' },
     { name: 'Lessons', icon: BookOpen, href: '/courses' },
     { name: 'Leaderboard', icon: Trophy, href: '/leaderboard' },
+    { name: 'Profile', icon: User, href: '/profile' },
+    { name: 'Settings', icon: Settings, href: '/settings' },
     { name: 'Help', icon: HelpCircle, href: '/help' },
   ];
 
