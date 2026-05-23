@@ -33,15 +33,72 @@
               ]
             }
           ]
+        },
+        {
+          "id": "module-2",
+          "title": "Module 2: Solving Simple Equations",
+          "lessons": [
+            {
+              "id": "the-balanced-scale",
+              "title": "The Balanced Scale",
+              "content": "Did you know that an equation is like a balanced playground see-saw or a traditional scale? The equals sign (=) tells us that the left side and the right side have the exact same 'weight' or value.\n\nOur goal in algebra is often to find out what's inside our mystery variable box (x). To do that, we need to get the variable all by itself on one side of the scale.\n\nThe Golden Rule of Algebra is: Whatever you do to one side of the equation, you MUST do to the other side!\n\nIf you take away 5 pounds from the left side, the scale will tip. To fix it, you have to take away 5 pounds from the right side too!\n\nExample:\nIf we have x + 5 = 12:\n1. We want x alone. It has a '+ 5' hanging out with it.\n2. The opposite of adding 5 is subtracting 5.\n3. Subtract 5 from the left: (x + 5) - 5 = x.\n4. Subtract 5 from the right: 12 - 5 = 7.\n5. Now the scale says: x = 7. Success!",
+              "practice": [
+                {
+                  "question": "You have a bag of marbles (m). After your friend gives you 10 more, you have 25 marbles in total. The equation is m + 10 = 25. Solve for m.",
+                  "answer": "m = 15",
+                  "explanation": "To get m alone, we do the opposite of adding 10, which is subtracting 10. We subtract 10 from both sides: 25 - 10 = 15. So, you started with 15 marbles!"
+                },
+                {
+                  "question": "A wizard triples the height of a small tower (h). The new tower is 18 feet tall. The equation is 3h = 18. Solve for h.",
+                  "answer": "h = 6",
+                  "explanation": "3h means 3 times h. The opposite of multiplication is division. We divide both sides by 3. 18 / 3 = 6. The original tower was 6 feet tall!"
+                },
+                {
+                  "question": "You split a pizza (p) in half, and each half has 4 slices. The equation is p / 2 = 4. Solve for p.",
+                  "answer": "p = 8",
+                  "explanation": "The pizza was divided by 2. The opposite of division is multiplication. We multiply both sides by 2. 4 * 2 = 8. The whole pizza had 8 slices!"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "id": "algebra-1",
-      "title": "Algebra 1",
-      "description": "Introduction to algebraic concepts and techniques",
+      "id": "fractions",
+      "title": "Fraction Fundamentals",
+      "description": "Mastering the world of parts and wholes",
       "icon": "/assets/fraction-heroes-icon.png",
-      "modules": []
+      "modules": [
+        {
+          "id": "fraction-heroes",
+          "title": "Module 1: Fraction Heroes",
+          "lessons": [
+            {
+              "id": "identifying-fractions",
+              "title": "Identifying Fractions",
+              "content": "Imagine you just ordered a giant pepperoni pizza. Before anyone eats, the pizza is cut into several equal slices.\n\nA fraction is just a way to talk about a part of that whole pizza!\n\n1. The Denominator (Bottom Number): This is the total number of slices the whole pizza was cut into. It's the 'Down-ominator' because it's on the bottom.\n2. The Numerator (Top Number): This is how many slices you are talking about (maybe the slices you've already eaten!).\n\nIf a pizza is cut into 8 slices and you eat 3 of them, you have eaten 3/8 of the pizza.\n\nRemember:\n- Numerator = 'How many parts we have'\n- Denominator = 'How many equal parts make a whole'",
+              "practice": [
+                {
+                  "question": "A birthday cake is cut into 10 equal pieces. If the birthday boy eats one piece, what fraction of the cake did he eat?",
+                  "answer": "1/10",
+                  "explanation": "The cake was cut into 10 total pieces (the denominator). He ate 1 piece (the numerator). So the fraction is 1 out of 10, or 1/10."
+                },
+                {
+                  "question": "A chocolate bar is divided into 4 equal squares. You give 3 squares to your friends. Write the fraction of the chocolate bar that you gave away.",
+                  "answer": "3/4",
+                  "explanation": "The total number of squares is 4 (denominator). The number of squares given away is 3 (numerator). The fraction is 3/4."
+                },
+                {
+                  "question": "In a small classroom of 5 students, 2 students are wearing blue shirts. What is the denominator of the fraction of students wearing blue shirts?",
+                  "answer": "5",
+                  "explanation": "The denominator represents the total number of items in the group. Since there are 5 students in total, the denominator is 5. (The whole fraction would be 2/5!)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "geometry",
