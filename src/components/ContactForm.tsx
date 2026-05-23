@@ -121,7 +121,7 @@ export default function ContactForm() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="you@gmail.com"
                 className="w-full px-6 py-4 rounded-xl bg-brand-classic-cream border border-brand-soft-blue/20 focus:outline-none focus:border-brand-orange transition-colors text-brand-deep-navy font-medium"
               />
             </div>
