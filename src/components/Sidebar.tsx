@@ -6,9 +6,20 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
+import { getCookie, deleteCookie } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
+
 const Sidebar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleLogout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    deleteCookie('auth_token');
+    router.push('/');
+    router.refresh();
+  };
 
   const menuItems = [
     { name: 'Home', icon: Home, href: '/dashboard' },
@@ -81,13 +92,13 @@ const Sidebar = () => {
         </div>
 
         <div className="mt-auto p-6">
-          <Link 
-            href="/"
-            className="flex items-center gap-3 px-4 py-3 w-full rounded-lg hover:bg-white/10 text-brand-classic-cream/80 transition-colors"
+          <button 
+            onClick={handleLogout}
+            className="flex items-center gap-3 px-4 py-3 w-full rounded-lg hover:bg-white/10 text-brand-classic-cream/80 transition-colors text-left"
           >
             <LogOut size={20} />
             <span>Logout</span>
-          </Link>
+          </button>
         </div>
       </aside>
     </>

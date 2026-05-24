@@ -2,8 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { cookies } from "next/headers";
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+  const isLoggedIn = cookieStore.has("auth_token");
+
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans">
       <Header />
@@ -19,8 +23,11 @@ export default function Home() {
               Expert math tutoring to help you succeed. Personalized learning paths designed for your success.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="/courses" className="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition-colors">
-                Start Learning
+              <Link 
+                href={isLoggedIn ? "/dashboard" : "/login"} 
+                className="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition-colors"
+              >
+                {isLoggedIn ? "Go to Dashboard" : "Start Learning"}
               </Link>
               <Link href="/tutors" className="bg-white text-brand-deep-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-classic-cream transition-colors">
                 Meet the Tutor

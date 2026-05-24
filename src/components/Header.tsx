@@ -1,10 +1,26 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { getCookie, deleteCookie } from '@/lib/utils';
 
 const Header = () => {
+  const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setIsLoggedIn(!!getCookie('auth_token'));
+  }, []);
+
+  const handleLogout = () => {
+    deleteCookie('auth_token');
+    setIsLoggedIn(false);
+    router.push('/');
+    router.refresh();
+  };
+
   return (
     <header className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full bg-transparent">
       <div className="flex items-center gap-2">
@@ -28,10 +44,24 @@ const Header = () => {
       </nav>
 
       <div className="flex items-center gap-6">
-        <Link href="/login" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</Link>
-        <Link href="/dashboard" className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
-          Start Learning
-        </Link>
+        {isLoggedIn ? (
+          <>
+            <Link href="/dashboard" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Dashboard</Link>
+            <button 
+              onClick={handleLogout}
+              className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors"
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link href="/login" className="text-brand-dark-slate font-medium hover:text-brand-soft-blue transition-colors">Log In</Link>
+            <Link href="/login" className="bg-brand-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
+              Start Learning
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );
